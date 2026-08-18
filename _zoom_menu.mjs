@@ -1,0 +1,10 @@
+import { chromium } from "playwright";
+const [, , outPath] = process.argv;
+const browser = await chromium.launch();
+const page = await browser.newPage({ viewport: { width: 390, height: 900 } });
+await page.goto("http://localhost:3411/about", { waitUntil: "networkidle" });
+const menuBtn = page.locator("button[aria-label='Toggle menu']");
+await menuBtn.click();
+await page.waitForTimeout(400);
+await page.screenshot({ path: outPath, fullPage: false });
+await browser.close();

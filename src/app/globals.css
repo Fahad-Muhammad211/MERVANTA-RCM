@@ -1,26 +1,150 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-ink-950: #060d16;
+  --color-ink-900: #0a1626;
+  --color-ink-850: #0d1d31;
+  --color-ink-800: #11253c;
+  --color-ink-700: #17324f;
+  --color-ink-600: #204264;
+
+  --color-paper-0: #fbfaf7;
+  --color-paper-50: #f6f5f1;
+  --color-paper-100: #eeece5;
+
+  --color-slate-50: #f5f7f8;
+  --color-slate-100: #e8ecef;
+  --color-slate-200: #d6dde2;
+  --color-slate-300: #b7c2ca;
+  --color-slate-400: #8b9aa6;
+  --color-slate-500: #647685;
+  --color-slate-600: #4b5c6b;
+  --color-slate-700: #374553;
+  --color-slate-800: #263340;
+  --color-slate-900: #182430;
+
+  --color-teal-50: #eef6f6;
+  --color-teal-100: #d3e9e9;
+  --color-teal-300: #6fa9ab;
+  --color-teal-500: #146b71;
+  --color-teal-600: #105a60;
+  --color-teal-700: #0d484d;
+  --color-teal-900: #082e32;
+
+  --color-gold-100: #f2e8d3;
+  --color-gold-300: #d8bb7d;
+  --color-gold-500: #b8923f;
+  --color-gold-600: #96762f;
+
+  --color-signal-green: #1f8a5f;
+  --color-signal-amber: #b8862f;
+  --color-signal-red: #b3402f;
+
+  --font-display: var(--font-newsreader), "Iowan Old Style", Georgia, serif;
+  --font-sans: var(--font-inter), "Segoe UI", Arial, sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink-950: var(--color-ink-950);
+  --color-ink-900: var(--color-ink-900);
+  --color-ink-850: var(--color-ink-850);
+  --color-ink-800: var(--color-ink-800);
+  --color-ink-700: var(--color-ink-700);
+  --color-ink-600: var(--color-ink-600);
+
+  --color-paper-0: var(--color-paper-0);
+  --color-paper-50: var(--color-paper-50);
+  --color-paper-100: var(--color-paper-100);
+
+  --color-slate-50: var(--color-slate-50);
+  --color-slate-100: var(--color-slate-100);
+  --color-slate-200: var(--color-slate-200);
+  --color-slate-300: var(--color-slate-300);
+  --color-slate-400: var(--color-slate-400);
+  --color-slate-500: var(--color-slate-500);
+  --color-slate-600: var(--color-slate-600);
+  --color-slate-700: var(--color-slate-700);
+  --color-slate-800: var(--color-slate-800);
+  --color-slate-900: var(--color-slate-900);
+
+  --color-teal-50: var(--color-teal-50);
+  --color-teal-100: var(--color-teal-100);
+  --color-teal-300: var(--color-teal-300);
+  --color-teal-500: var(--color-teal-500);
+  --color-teal-600: var(--color-teal-600);
+  --color-teal-700: var(--color-teal-700);
+  --color-teal-900: var(--color-teal-900);
+
+  --color-gold-100: var(--color-gold-100);
+  --color-gold-300: var(--color-gold-300);
+  --color-gold-500: var(--color-gold-500);
+  --color-gold-600: var(--color-gold-600);
+
+  --color-signal-green: var(--color-signal-green);
+  --color-signal-amber: var(--color-signal-amber);
+  --color-signal-red: var(--color-signal-red);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+
+  --container-page: 1360px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper-0);
+  color: var(--color-ink-900);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+}
+
+::selection {
+  background: var(--color-teal-500);
+  color: white;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Subtle grain / texture overlay used on dark hero sections */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.bg-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(10, 22, 38, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10, 22, 38, 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
