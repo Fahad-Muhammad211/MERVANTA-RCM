@@ -134,7 +134,7 @@ export default function WhoWeServePage() {
           ))}
         </div>
 
-        <div className="mt-12 hidden overflow-x-auto md:block">
+        <div className="mt-12 hidden overflow-x-auto scrollbar-none md:block">
           <table className="w-full min-w-[640px] border-collapse text-sm">
             <thead>
               <tr className="border-b border-slate-200">

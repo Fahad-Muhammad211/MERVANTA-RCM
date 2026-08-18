@@ -33,7 +33,7 @@ export function WhoWeServePreview() {
           className="max-w-2xl"
         />
         <Button href="/who-we-serve" variant="secondary">
-          See how we support your organization
+          Explore who we serve
         </Button>
       </div>
       <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-slate-200 md:grid-cols-4">

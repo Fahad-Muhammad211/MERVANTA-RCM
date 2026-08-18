@@ -23,7 +23,7 @@ export function PayerTable() {
         ))}
       </div>
 
-      <div className="hidden overflow-x-auto sm:block">
+      <div className="hidden overflow-x-auto scrollbar-none sm:block">
         <table className="w-full min-w-[440px] border-collapse text-sm">
           <thead>
             <tr className="border-b border-slate-200 text-left text-xs font-medium uppercase tracking-wide text-slate-400">

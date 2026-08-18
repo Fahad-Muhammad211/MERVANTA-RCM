@@ -14,7 +14,7 @@ export function RcmEcosystemPreview() {
         align="center"
       />
 
-      <div className="mt-14 overflow-x-auto pb-4">
+      <div className="mt-14 overflow-x-auto scrollbar-none pb-4">
         <div className="flex min-w-max items-stretch gap-3 px-1">
           {rcmStages.map((stage, i) => (
             <Reveal key={stage.slug} delay={i * 0.04} className="flex items-stretch">

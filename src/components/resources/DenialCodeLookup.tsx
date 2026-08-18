@@ -53,7 +53,7 @@ export function DenialCodeLookup() {
         )}
       </div>
 
-      <div className="mt-6 hidden overflow-x-auto lg:block">
+      <div className="mt-6 hidden overflow-x-auto scrollbar-none lg:block">
         <table className="w-full min-w-[720px] border-collapse text-sm">
           <thead>
             <tr className="border-b border-slate-200 text-left text-xs font-medium uppercase tracking-wide text-slate-400">

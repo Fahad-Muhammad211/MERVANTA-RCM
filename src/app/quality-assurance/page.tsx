@@ -74,7 +74,7 @@ export default function QualityAssurancePage() {
           title="Quality checkpoints embedded throughout the RCM lifecycle"
           align="center"
         />
-        <div className="mt-12 overflow-x-auto pb-2">
+        <div className="mt-12 overflow-x-auto scrollbar-none pb-2">
           <div className="flex min-w-max gap-3 px-1">
             {rcmStages.map((stage) => (
               <div key={stage.slug} className="flex w-[150px] flex-col items-center gap-2 rounded-lg border border-slate-200 bg-white p-4 text-center">
